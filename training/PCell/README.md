@@ -27,7 +27,7 @@ As basic knowledge of SKILL programming is required to follow this quide.
 
 The following points illustrate the concept of a PCell supermaster and submaster:
 
-(images/PCellCompiler.png)
+(/training/PCell/images/PCellCompiler.png)
 
 When you compile a SKILL PCell code (that is, load a SKILL file with the call of pcDefinePCell in CIW), a master/superMaster cell is created for it. The compiler attaches the compiled code to the master cell. The master cell contains the SKILL code of the cell’s definition along with the cell’s parameters and their default values.
 

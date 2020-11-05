@@ -26,7 +26,9 @@ As basic knowledge of SKILL programming is required to follow this quide.
 # PCell Supermaster and Submaster
 
 The following points illustrate the concept of a PCell supermaster and submaster:
-<PCellCompiler.png>
+
+(/images/PCellCompiler.png)
+
 When you compile a SKILL PCell code (that is, load a SKILL file with the call of pcDefinePCell in CIW), a master/superMaster cell is created for it. The compiler attaches the compiled code to the master cell. The master cell contains the SKILL code of the cell’s definition along with the cell’s parameters and their default values.
 
 A **SuperMaster** is the cell which is created with default parameters in the `Lib -> Cell -> View` format after the code is compiled and loaded. It resides on the hard disk as a `layout.oa` file.

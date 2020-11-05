@@ -4,7 +4,7 @@ Parameterized cells (PCells) is powerful way of creating automation using SKILL.
 
 You can create PCells by:
 - SKILL programming
-- Using PCell Designer [PCD][]
+- Using PCell Designer [PCD]
 
     SKILL programming: Objective of this tutorial (SKILL PCells)
      

@@ -1,12 +1,14 @@
-Overview
+# Overview
 
-PCells (Parameterized cells) are useful for creating layouts because they allow users to quickly change the layout of a device or any custom layout parts (for example, bus lines, etc.) by simply changing one or more parameters of the PCell. PCells can be easily coded using SKILL.
+Parameterized cells (PCells) is powerful way of creating automation using SKILL.
 
-There are currently three methods for creating PCells:
+You can create PCells by:
+- SKILL programming
+- Using PCell Designer (PCD)(https://www.cadence.com/content/dam/cadence-www/global/en_US/documents/services/cadence-vcad-pcell-ds.pdf)
 
     SKILL programming: Objective of this tutorial (SKILL PCells)
      
-    PCell Designer (PCD)[https://www.cadence.com/content/dam/cadence-www/global/en_US/documents/services/cadence-vcad-pcell-ds.pdf]: This is a tool which is built using SKILL++ and allows creation of PCells graphically.
+    : This is a tool which is built using SKILL++ and allows creation of PCells graphically.
      
     PCell menu in Launch > Plugins > Pcell: This tool is used for creating PCells graphically, but it has already been obsoleted and should no longer be used.
 

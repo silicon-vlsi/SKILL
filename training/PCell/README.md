@@ -26,14 +26,18 @@ As basic knowledge of SKILL programming is required to follow this quide.
 # PCell Supermaster and Submaster
 
 The following points illustrate the concept of a PCell supermaster and submaster:
-<PCellCompiler.png>
+
+![PCell Compiler Flow](images/PCellCompiler.png)
+
 When you compile a SKILL PCell code (that is, load a SKILL file with the call of pcDefinePCell in CIW), a master/superMaster cell is created for it. The compiler attaches the compiled code to the master cell. The master cell contains the SKILL code of the cell’s definition along with the cell’s parameters and their default values.
 
 A **SuperMaster** is the cell which is created with default parameters in the `Lib -> Cell -> View` format after the code is compiled and loaded. It resides on the hard disk as a `layout.oa` file.
 
 If one or more parameters are modified, a copy of the supermaster with the modified parameters is created in the virtual memory. This is termed as a **submaster**. One submaster is created for every unique parameter combination.
 Submasters are created in memory and are available for use by all cellViews. When parameters on an instance are modified, Virtuoso first checks if there is an existing submaster that contains the same unique set of modified parameters. If such a submaster is available, it will be reused. Otherwise, a new submaster will be created.
-<submaster.png>
+
+![SubMaster](images/subMaster.png)
+
 Submaster cell 1 represents a unique parameter combination of `L=10u` and `W=20u`. Instances I1 and I2 point to the same submaster. Similarly, submaster cell 2 is another unique parameter combination of `L=20u` and `W=30u`. Instances I3, I4, and I5 point to the same submaster.
 
 # Basic PCell
@@ -48,7 +52,7 @@ pcDefinePCell(
  let( (cv)
   cv=pcCellView
   dbCreateRect(cv list("Metal1" "drawing") list(0:0 w:l)) ;; Create Rectangle
- ) ;let
+ ) ;letn
 ) ;pcDefinePCell
 ```
 The above SKILL code defines a simple PCell with the following features:
@@ -138,7 +142,8 @@ let( ( lib cell libId cellId cdfId )
 ```
 Go to CIW: `Tools > CDF> Edit` and display CDF information for myCell1. It should now have two parameters.
 This completes the creation of the basic PCell.
-<CDFedit.jpg>
+
+![CDF Edit](images/CDFedit.jpg)
 
 # Adding Parameters to a PCell
 
@@ -195,10 +200,11 @@ load("./scripts/lab2_cdf.il")
 ```
 Create or open the layout cell "lab2" and place an instance of myCell2 in it. Select the instance, open the Edit Instance Properties form, and note the addition of the "layer" parameter.
 
-<editInstProp.jpg>
+![Edit Instance Property](images/editInstProp.jpg)
 
 A simple improvement to the PCell is to enhance the CDF parameters so that they allow users to input the values easily.
-<CDFmod.jpg>
+
+![CDF Modification](images/CDFmod.jpg)
 
 For example, instead of using a simple string field, which is prone to typos from users, a cyclic field can be used for layer input. This can be done by modifying the CDF codes as shown below and reloading the lab2_cdf.il file in CIW.
 
@@ -208,7 +214,7 @@ Instead of putting all the required codes within the pcDefinePCell command, it i
 
 In the example below, the original code for the basic PCell has now been separated into two parts: pcDefinePCell together with a simple constructor function CCScreatePcell3.
 
-<constructor.jpg>
+![Constructor](images/constructor.jpg)
 
 Advantages of using constructor functions include:
 - Modularizes the codes and makes debugging easier
@@ -247,7 +253,7 @@ Virtuoso will automatically append "64bit" to the path of the context file. For 
 
 It is important to understand where you set the default values. Once the system finds a value for a parameter, it stops looking. For example, if you set a parameter value in the pcDefinePCell code (number 4 in the below image), and in the CDF of the PCell (number 2 in the below image), changing the parameter value in the PCell code does not show the same values in the Create/Edit Instance forms.
 
-<parPrecedence.png>
+![Parameter Precedence](images/parPrecedence.png)
 
 .............
 # Using Constraint Values from Virtuoso Techfile
